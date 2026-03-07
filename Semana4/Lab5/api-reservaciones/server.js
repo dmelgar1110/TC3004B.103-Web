@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const reservacionesRoutes = require("./routes/reservacionesRoutes");
+const reservacionesRoutes = require("./routes/reservacionRoutes.js");
 const dotenv = require("dotenv");
 dotenv.config();
 const app = express();

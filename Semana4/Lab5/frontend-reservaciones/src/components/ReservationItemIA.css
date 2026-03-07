@@ -1,0 +1,262 @@
+/* Estilos modernos y dinámicos para ReservationItemIA */
+.reservation-item-ia {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 2px solid #e5e7eb;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reservation-item-ia:hover {
+  background: linear-gradient(135deg, #667eea25 0%, #764ba225 100%);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+  transform: scale(1.01);
+}
+
+.reservation-item-ia.deleting {
+  opacity: 0.5;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.reservation-item-ia td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+/* ID Badge */
+.id-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Date Cell */
+.date-cell {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.date-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Sala Badge */
+.sala-badge {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(245, 87, 108, 0.3);
+}
+
+.sala-icon {
+  font-size: 1.2rem;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.user-icon {
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* People Count */
+.people-count {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  box-shadow: 0 2px 8px rgba(168, 237, 234, 0.4);
+}
+
+.people-icon {
+  font-size: 1.2rem;
+}
+
+/* Time Info */
+.time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.time-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.time-value {
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.time-info.start .time-value {
+  color: #059669;
+}
+
+.time-info.end .time-value {
+  color: #dc2626;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  animation: glow 2s infinite alternate;
+  transition: transform 0.2s;
+}
+
+.status-badge:hover {
+  transform: scale(1.1);
+}
+
+@keyframes glow {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.2);
+  }
+}
+
+/* Action Buttons */
+.action-cell {
+  text-align: center;
+}
+
+.edit-btn-ia,
+.delete-btn-ia {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.edit-btn-ia::before,
+.delete-btn-ia::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.edit-btn-ia:hover::before,
+.delete-btn-ia:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.edit-btn-ia {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.edit-btn-ia:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+}
+
+.edit-btn-ia:active {
+  transform: translateY(0);
+}
+
+.delete-btn-ia {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.delete-btn-ia:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(245, 87, 108, 0.6);
+}
+
+.delete-btn-ia:active {
+  transform: translateY(0);
+}
+
+.delete-btn-ia:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+}

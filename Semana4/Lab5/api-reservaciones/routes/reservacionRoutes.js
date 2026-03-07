@@ -1,10 +1,10 @@
 const express = require('express');
-const countryController = require('../controllers/reservacionController');
+const reservacionController = require('../controllers/reservacionController.js');
 const router = express.Router();
-// Rutas para los países
-router.get('/', countryController.getAllCountries);
-router.get('/:id', countryController.getCountryById);
-router.post('/', countryController.createCountry);
-router.put('/:id', countryController.updateCountry);
-router.delete('/:id', countryController.deleteCountry);
+// Rutas para reservaciones
+router.get('/', reservacionController.getAllReservaciones);
+router.get('/:id', reservacionController.getReservacionById);
+router.post('/', reservacionController.createReservacion);
+router.put('/:id', reservacionController.updateReservacion);
+router.delete('/:id', reservacionController.deleteReservacion);
 module.exports = router;
